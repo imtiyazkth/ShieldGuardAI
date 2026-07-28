@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ShieldGuard AI</string>
+    <string name="notification_channel_security">Security Alerts</string>
+    <string name="notification_channel_install">New App Alerts</string>
+    <string name="permission_rationale_notification_listener">
+        ShieldGuard ko aapki notifications monitor karne ki zaroorat hai taaki suspicious links
+        aur scam messages detect ho sakein.
+    </string>
+    <string name="permission_rationale_accessibility">
+        ShieldGuard ko Accessibility Service ki zaroorat nahi hai — ye sirf DUSRI apps ke
+        Accessibility access ko monitor karta hai.
+    </string>
+</resources>

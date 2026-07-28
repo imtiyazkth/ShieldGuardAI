@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Block all cleartext HTTP traffic — HTTPS only -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Exception: Allow HTTP for Safe Browsing API check redirects only -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">safebrowsing.googleapis.com</domain>
+        <domain includeSubdomains="true">raw.githubusercontent.com</domain>
+    </domain-config>
+</network-security-config>
