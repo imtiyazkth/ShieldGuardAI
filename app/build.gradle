@@ -16,22 +16,14 @@ android {
         versionCode 1
         versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        // Google Safe Browsing API Key (replace with your key)
         buildConfigField "String", "SAFE_BROWSING_KEY", '"YOUR_API_KEY_HERE"'
-        // Malware DB update URL
-        buildConfigField "String", "MALWARE_DB_URL", '"https://raw.githubusercontent.com/YOUR_REPO/main/malware_db.json"'
+        buildConfigField "String", "MALWARE_DB_URL", '"https://raw.githubusercontent.com/imtiyazkth/ShieldGuardAI/main/app/src/main/assets/malware_db.json"'
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            applicationIdSuffix ".debug"
-            debuggable true
         }
     }
 
@@ -61,7 +53,7 @@ android {
 }
 
 dependencies {
-    // ===== Core Android =====
+    // Core
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'
@@ -69,56 +61,41 @@ dependencies {
     implementation 'androidx.navigation:navigation-compose:2.7.6'
     implementation 'androidx.work:work-runtime-ktx:2.9.0'
 
-    // ===== Jetpack Compose =====
+    // Compose
     implementation platform('androidx.compose:compose-bom:2024.01.00')
     implementation 'androidx.compose.ui:ui'
     implementation 'androidx.compose.ui:ui-graphics'
-    implementation 'androidx.compose.ui:ui-tooling-preview'
     implementation 'androidx.compose.material3:material3'
     implementation 'androidx.compose.material:material-icons-extended'
     implementation 'androidx.compose.animation:animation'
     debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
 
-    // ===== Hilt DI =====
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    ksp "com.google.dagger:hilt-compiler:$hilt_version"
+    // Hilt
+    implementation "com.google.dagger:hilt-android:2.50"
+    ksp "com.google.dagger:hilt-compiler:2.50"
     implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
     implementation 'androidx.hilt:hilt-work:1.1.0'
     ksp 'androidx.hilt:hilt-compiler:1.1.0'
 
-    // ===== Room Database =====
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-    ksp "androidx.room:room-compiler:$room_version"
+    // Room
+    implementation "androidx.room:room-runtime:2.6.1"
+    implementation "androidx.room:room-ktx:2.6.1"
+    ksp "androidx.room:room-compiler:2.6.1"
 
-    // ===== Security =====
+    // Security
     implementation 'androidx.security:security-crypto:1.1.0-alpha06'
 
-    // ===== Networking =====
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    // Network
     implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
 
-    // ===== Coroutines =====
+    // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
 
-    // ===== JSON =====
+    // JSON
     implementation 'com.google.code.gson:gson:2.10.1'
 
-    // ===== Charts (Dashboard) =====
-    implementation 'com.patrykandpatrick.vico:compose-m3:1.13.1'
-
-    // ===== PDF Generation =====
-    implementation 'com.itextpdf:itext7-core:7.2.5'
-
-    // ===== Testing =====
+    // Testing
     testImplementation 'junit:junit:4.13.2'
-    testImplementation 'org.mockito:mockito-core:5.8.0'
-    testImplementation 'org.mockito.kotlin:mockito-kotlin:5.2.1'
-    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation platform('androidx.compose:compose-bom:2024.01.00')
-    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
 }
