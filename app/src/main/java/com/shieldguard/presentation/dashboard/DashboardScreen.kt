@@ -278,7 +278,7 @@ fun SecurityScoreCard(
             if (isScanning) {
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     LinearProgressIndicator(
-                        progress = { scanProgress },
+                        progress = scanProgress,
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(CircleShape)

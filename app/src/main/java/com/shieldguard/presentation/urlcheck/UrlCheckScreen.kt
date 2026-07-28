@@ -240,7 +240,7 @@ fun UrlResultCard(result: UrlScanResult, onDismiss: () -> Unit) {
             }
 
             Spacer(Modifier.height(12.dp))
-            HorizontalDivider(color = borderColor.copy(0.3f))
+            Divider(color = borderColor.copy(0.3f))
             Spacer(Modifier.height(12.dp))
 
             // AI EXPLANATION
@@ -269,7 +269,7 @@ fun UrlResultCard(result: UrlScanResult, onDismiss: () -> Unit) {
             }
 
             Spacer(Modifier.height(12.dp))
-            HorizontalDivider(color = borderColor.copy(0.3f))
+            Divider(color = borderColor.copy(0.3f))
             Spacer(Modifier.height(8.dp))
 
             // TECHNICAL DETAILS

@@ -1,0 +1,12 @@
+# Disabled - Android project, no GitHub Pages needed
+on:
+  workflow_dispatch:
+    inputs:
+      disabled:
+        description: 'This workflow is disabled'
+jobs:
+  disabled:
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+      - run: echo "disabled"

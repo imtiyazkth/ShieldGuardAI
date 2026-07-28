@@ -62,7 +62,7 @@ fun AppScannerScreen(
                     )
                     Spacer(Modifier.height(4.dp))
                     LinearProgressIndicator(
-                        progress = { uiState.scanProgress },
+                        progress = uiState.scanProgress,
                         modifier = Modifier.fillMaxWidth()
                     )
                     Text(
@@ -247,7 +247,7 @@ fun AppRiskCard(app: ScannedAppEntity) {
             }
 
             if (expanded) {
-                HorizontalDivider()
+                Divider()
                 Spacer(Modifier.height(8.dp))
 
                 // Risk reasons
